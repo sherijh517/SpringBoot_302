@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/process}"
+      th:object="${job}"
+      method="post">
+    Title :<input type="text" th:field="*{title}" />
+    <span th:if="${#fields.hasErrors('title')}"
+          th:errors="*{title}"></span><br />
+    Description :<textarea rows="3" th:field="*{description}" />
+    <span th:if="${#fields.hasErrors('descritpion')}"
+          th:errors="*{description}"></span>
+    <br />
+    <input type="submit" value="submit" />
+</form>
+</body>
+</html>
